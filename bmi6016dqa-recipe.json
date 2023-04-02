@@ -9,6 +9,14 @@
   },
   {
     "Action": {
+      "Operation": "DELETE_DUPLICATE_ROWS",
+      "Parameters": {
+        "duplicateRowsCount": "1"
+      }
+    }
+  },
+  {
+    "Action": {
       "Operation": "REMOVE_VALUES",
       "Parameters": {
         "sourceColumn": "code_system"
@@ -89,6 +97,22 @@
       "Operation": "REMOVE_MISSING",
       "Parameters": {
         "sourceColumn": "date"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE",
+      "Parameters": {
+        "sourceColumns": "[\"lab_result_text_val\"]"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "lab_result_num_val"
       }
     }
   }
