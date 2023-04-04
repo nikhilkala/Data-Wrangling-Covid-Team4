@@ -1,0 +1,204 @@
+[
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "patient_id"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "encounter_id"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "code_system"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "code"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "date"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_MISSING",
+      "Parameters": {
+        "sourceColumn": "derived_by_TriNetX"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "true",
+        "removeAllWhitespace": "true",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "patient_id"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "true",
+        "removeAllQuotes": "true",
+        "removeAllWhitespace": "true",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "code_system"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "true",
+        "removeAllWhitespace": "true",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "code"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "false",
+        "removeAllWhitespace": "true",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "derived_by_TriNetX"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "DELETE_DUPLICATE_ROWS",
+      "Parameters": {
+        "duplicateRowsCount": "160"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "CHANGE_DATA_TYPE",
+      "Parameters": {
+        "columnDataType": "string",
+        "sourceColumn": "code"
+      }
+    }
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_VALUES",
+      "Parameters": {
+        "sourceColumn": "date"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "IS_NOT",
+        "Value": "[\"20170322\",\"20170831\",\"20180216\",\"20180913\",\"20180204\",\"20171023\",\"20200825\",\"20200808\",\"20200824\",\"20171110\",\"20200707\",\"20180211\",\"20180403\",\"20200111\",\"20170428\",\"20171019\",\"20180315\",\"20180928\",\"20200113\",\"20200623\",\"20200811\",\"20200721\",\"20200819\",\"20200815\",\"20191120\",\"20200622\",\"20200524\",\"20200617\",\"20180117\",\"20171214\",\"20190611\",\"20190710\",\"20200715\",\"20200429\",\"20200505\",\"20190321\",\"20190906\",\"20200306\",\"20181212\",\"20180608\",\"20190614\"]",
+        "TargetColumn": "date"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_VALUES",
+      "Parameters": {
+        "sourceColumn": "code_system"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "IS_NOT",
+        "Value": "[\"CPT\",\"HCPCS\"]",
+        "TargetColumn": "code_system"
+      }
+    ]
+  },
+  {
+    "Action": {
+      "Operation": "REMOVE_COMBINED",
+      "Parameters": {
+        "collapseConsecutiveWhitespace": "false",
+        "removeAllPunctuation": "false",
+        "removeAllQuotes": "true",
+        "removeAllWhitespace": "true",
+        "removeCustomCharacters": "false",
+        "removeCustomValue": "false",
+        "removeLeadingAndTrailingPunctuation": "false",
+        "removeLeadingAndTrailingQuotes": "false",
+        "removeLeadingAndTrailingWhitespace": "false",
+        "removeLetters": "false",
+        "removeNumbers": "false",
+        "removeSpecialCharacters": "true",
+        "sourceColumn": "encounter_id"
+      }
+    },
+    "ConditionExpressions": [
+      {
+        "Condition": "IS",
+        "Value": "[\"CPT\",\"HCPCS\"]",
+        "TargetColumn": "code_system"
+      }
+    ]
+  }
+]
